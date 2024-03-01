@@ -17,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-screen h-screen bg-gradient-to-b from-blue-50 to-red-100`}>
+      <body className={`${inter.className} w-screen h-screen bg-gradient-to-b from-blue-50 to-red-100 `}>
         <section>
           <Navbar />
         </section>
-        <section>
+        <section className="h-[calc(100vh-6rem)]">
           {children}
         </section>
       </body>
