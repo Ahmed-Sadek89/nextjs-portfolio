@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="h-full px-5 py-5 md:px-32 flex flex-col md:flex-row gap-5 items-baseline md:items-center">
+    <main className="h-full px-5 py-1 md:py-5 md:px-32 flex flex-col md:flex-row gap-5 items-baseline md:items-center">
       <section className="w-full h-1/2 md:h-full relative flex-1">
-        <Image src={'/hero.png'} alt="hero" fill className="object-contain"/>
+        <Image src={'/hero.png'} alt="hero" fill  />
       </section>
-      <section className="w-full md:w-1/2 h-1/2 md:h-full flex-1 flex flex-col gap-3 justify-center">
-        <h2 className="text-4xl md:text-6xl font-bold">Crafting Digital Experiences, Designing Tomorrow.</h2>
-        <p className="text-sm md:text-base">
+      <section className="w-full md:w-1/2 h-1/2 md:h-full flex-1 flex flex-col gap-2 justify-center">
+        <h2 className="leading-tight text-xl md:text-6xl font-bold">Crafting Digital Experiences, Designing Tomorrow.</h2>
+        <p className="leading-tight  text-sm md:text-base">
           Welcome to my digital canvas, where innovation and creativity
           converge. With a keen eye for aesthetics and a mastery of code, my
           portfolio showcases a diverse collection of projects that reflect my
