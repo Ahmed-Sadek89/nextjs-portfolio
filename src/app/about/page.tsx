@@ -1,8 +1,15 @@
-
+"use client"
+import {motion} from 'framer-motion'
 const page = () => {
-  return (
-    <main>about</main>
-  )
+    return (
+        <motion.main
+            initial={{ y: "-100vh" }}
+            animate={{ y: '0%' }}
+            transition={{ duration: 1 }}
+            className=""
+        >about
+        </motion.main>
+    )
 }
 
 export default page
