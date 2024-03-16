@@ -40,9 +40,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode; }) => {
                 />
                 {/* end screen layout */}
 
-                <section>
                     <Navbar />
-                </section>
                 <section className="h-[calc(100vh-6rem)]">
                     {children}
                 </section>
