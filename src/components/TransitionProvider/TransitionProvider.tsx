@@ -28,7 +28,7 @@ const TransitionProvider = ({ children }: { children: React.ReactNode; }) => {
                     exit={{opacity: 0}}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                    {pathname.substring(1)}
+                    {pathname.substring(1) !== '' ? pathname.substring(1) : "Home"}
                 </motion.div>
                 {/* pathname in screen layout */}
 

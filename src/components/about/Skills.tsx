@@ -1,39 +1,37 @@
+import { useRef } from "react"
+import ScrollDownSVG from "./ScrollDownSVG"
 import { skills } from "./skillsArray"
+import { useInView, motion } from "framer-motion";
 
 const Skills = () => {
+  const skillRef = useRef<HTMLDivElement>(null);
+  const isSkillRefInView = useInView(skillRef)
   return (
-    <div className="flex gap-10 flex-col mt-2">
-      <h2 className='font-bold text-xl'>
+    <div className="flex gap-10 flex-col mt-2" ref={skillRef}>
+      <motion.h2 
+        className='font-bold text-xl'
+        initial={{x: "-300px"}}
+        animate={isSkillRefInView ? {x: "0px"} : {x: "-300px"}}
+        transition={{type: "spring", stiffness: 300, delay: 0.4}}
+      >
         SKILLS
-      </h2>
-      <div className="flex flex-row flex-wrap gap-3">
+      </motion.h2>
+      <motion.div 
+        className="flex flex-row flex-wrap gap-3 w-full md:w-2/3"
+        initial={{x: "-300px", opacity: 0}}
+        animate={isSkillRefInView ? {x: "0px", opacity: 1} : {x: "-300px", opacity: 0}}
+        transition={{type: "spring", stiffness: 300}}
+      >
         {skills.map((index) => (
-          <span key={index} className="bg-black text-white rounded-md p-2 text-sm">
+          <span
+            key={index} 
+            className="bg-black text-white rounded-md p-2 text-sm cursor-pointer hover:text-black hover:bg-white"
+          >
             {index}
           </span>
         ))}
-      </div>
-      <div>
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          width={50}
-          height={50}
-        >
-          <path
-            d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
-            stroke="#000000"
-            strokeWidth="1"
-          ></path>
-          <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
-          <path
-            d="M15 11L12 14L9 11"
-            stroke="#000000"
-            strokeWidth="1"
-          ></path>
-        </svg>
-      </div>
+      </motion.div>
+      <ScrollDownSVG />
     </div>
   )
 }
