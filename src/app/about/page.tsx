@@ -6,7 +6,7 @@ import Skills from '@/components/about/Skills'
 import { motion, useScroll } from 'framer-motion'
 import React, { useRef } from 'react'
 
-const page = () => {
+const Page = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const {scrollYProgress} = useScroll({container: containerRef})
     return (
@@ -33,4 +33,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
