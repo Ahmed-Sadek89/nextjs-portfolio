@@ -1,6 +1,6 @@
 "use client"
 import {motion} from 'framer-motion'
-const page = () => {
+const Page = () => {
   return (
     <motion.main
       initial={{ y: "-100vh" }}
@@ -12,4 +12,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
